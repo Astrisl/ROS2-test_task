@@ -39,7 +39,7 @@ $$x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)$$
 * Simulation time (`use_sim_time`) is enabled to maintain clock synchronization with Gazebo.
 
 ---
-<video src="https://youtu.be/bqLSEn0y_v4" width="100%" controls></video>
+[![Collision-Avoidance Demo](https://img.youtube.com/vi/bqLSEn0y_v4/maxresdefault.jpg)](https://youtu.be/bqLSEn0y_v4)
 ---
 ## How to Run Locally with Docker Container
 
