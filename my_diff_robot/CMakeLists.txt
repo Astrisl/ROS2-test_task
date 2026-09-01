@@ -25,4 +25,16 @@ install(
   DESTINATION lib/${PROJECT_NAME}
 )
 
+find_package(rclcpp REQUIRED)
+find_package(sensor_msgs REQUIRED)
+find_package(geometry_msgs REQUIRED)
+
+add_executable(safe_node src/safe_node.cpp)
+ament_target_dependencies(safe_node rclcpp sensor_msgs geometry_msgs)
+
+install(TARGETS
+  safe_node
+  DESTINATION lib/${PROJECT_NAME}
+)
+
 ament_package()
