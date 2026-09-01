@@ -51,7 +51,9 @@ cd /root/ros2_ws/src
 rm -rf my_diff_robot
 
 # 3. Clone YOUR repository (replace with your actual GitHub URL):
-git clone [https://github.com/Astrisl/ROS2-test_task.git](https://github.com/Astrisl/ROS2-test_task.git)
+git clone https://github.com/Astrisl/ROS2-test_task.git temp_repo
+cp -r temp_repo/my_diff_robot ./
+rm -rf temp_repo
 ```
 
 
