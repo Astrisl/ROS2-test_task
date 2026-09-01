@@ -1,5 +1,3 @@
-# Test
-
 # ROS 2 Safety Collision-Avoidance Node (`safe_node`)
 
 An automated safety node written in C++ for ROS 2 Jazzy that prevents a differential drive robot from colliding with obstacles using LIDAR feedback.
@@ -23,8 +21,8 @@ The `safe_node` acts as a safety layer sitting between the raw velocity commands
 Instead of filtering scan points by raw angle range, points are converted into Cartesian coordinates relative to the robot frame:
 $$x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)$$
 
-* **Rectangular Corridor:** Checks $x \in (0.20\text{m}, 0.50\text{m}]$ and $|y| \le \text{robot\_width} / 2 + \text{clearance}$.
-* **Why this approach?** It precise tracks obstacles directly in the robot's driving path while allowing the robot to pass close to walls or navigate narrow doorways without false triggers.
+* **Rectangular Corridor:** Checks $x \in (0.20\text{m}, 0.50\text{m}]$ and $|y| \le (w_{\text{robot}} / 2) + d_{\text{clearance}}$.
+* **Why this approach?** It precisely tracks obstacles directly in the robot's driving path while allowing the robot to pass close to walls or navigate narrow doorways without false triggers.
 
 ### 2. Signal Interception & Velocity Control
 * **Subscriptions:** `/cmd_vel_raw` (`geometry_msgs/msg/TwistStamped`), `/scan` (`sensor_msgs/msg/LaserScan`).
@@ -40,15 +38,18 @@ $$x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)$$
 
 ## How to Run Locally with Docker Container
 
-### 1: Navigate to Workspace Source Folder & Clone Your Repository
-Inside the running Docker container, navigate to the source directory of the workspace and clone specific GitHub repository (replacing the default package if present):
+### 1. Navigate to Workspace Source Folder & Clone Repository
+Inside the running Docker container, navigate to the source directory of the workspace, remove any old package version, and pull the updated package:
 
 ```bash
 # 1. Navigate to the ROS 2 workspace source directory
 cd /root/ros2_ws/src
 
-# 2. If an old version of the package exists, remove it:
+# 2. If an old version of the package exists, remove it
 rm -rf my_diff_robot
+
+# 3. Clone repository and set up package directory
+git clone [https://github.com/Astrisl/ROS2-test_task.git](https://github.com/Astrisl/ROS2-test_task.git) temp && mv temp/my_diff_robot . && rm -rf temp
 
 # 3. Clone YOUR repository (replace with your actual GitHub URL):
 git clone https://github.com/Astrisl/ROS2-test_task.git temp_repo
