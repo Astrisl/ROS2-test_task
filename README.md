@@ -94,7 +94,6 @@ Or via CLI:
 ros2 topic pub /cmd_vel_raw geometry_msgs/msg/TwistStamped "{header: {stamp: {sec: 0, nanosec: 0}}, twist: {linear: {x: 0.4, y: 0.0, z: 0.0}}}"
 ```
 
-
 ---
 [[Collision-Avoidance Demo](https://img.youtube.com/vi/bqLSEn0y_v4/maxresdefault.jpg)](https://youtu.be/bqLSEn0y_v4)
 ---
