@@ -1,3 +1,7 @@
+
+
+
+
 # ROS 2 Safety Collision-Avoidance Node (`safe_node`)
 
 An automated safety node written in C++ for ROS 2 Jazzy that prevents a differential drive robot from colliding with obstacles using LIDAR feedback.
@@ -35,7 +39,8 @@ $$x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)$$
 * Simulation time (`use_sim_time`) is enabled to maintain clock synchronization with Gazebo.
 
 ---
-
+<video src="https://youtu.be/bqLSEn0y_v4" width="100%" controls></video>
+---
 ## How to Run Locally with Docker Container
 
 ### 1. Navigate to Workspace Source Folder & Clone Repository
