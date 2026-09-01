@@ -7,7 +7,7 @@ from geometry_msgs.msg import TwistStamped
 class SimpleTeleop(Node):
     def __init__(self):
         super().__init__('simple_teleop')
-        self.pub = self.create_publisher(TwistStamped, '/diff_drive_controller/cmd_vel', 10)
+        self.pub = self.create_publisher(TwistStamped, '/cmd_vel_raw', 10)
         print("w=fwd x=back a=left d=right s=stop q=quit")
 
     def run(self):
