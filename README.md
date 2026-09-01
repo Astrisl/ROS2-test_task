@@ -38,9 +38,6 @@ $$x = r \cdot \cos(\theta), \quad y = r \cdot \sin(\theta)$$
 * Chassis self-reflections occur within a $0.20\text{m}$ radius from the sensor origin and are filtered out.
 * Simulation time (`use_sim_time`) is enabled to maintain clock synchronization with Gazebo.
 
----
-[![Collision-Avoidance Demo](https://img.youtube.com/vi/bqLSEn0y_v4/maxresdefault.jpg)](https://youtu.be/bqLSEn0y_v4)
----
 ## How to Run Locally with Docker Container
 
 ### 1. Navigate to Workspace Source Folder & Clone Repository
@@ -96,3 +93,8 @@ Or via CLI:
 ```
 ros2 topic pub /cmd_vel_raw geometry_msgs/msg/TwistStamped "{header: {stamp: {sec: 0, nanosec: 0}}, twist: {linear: {x: 0.4, y: 0.0, z: 0.0}}}"
 ```
+
+
+---
+[[Collision-Avoidance Demo](https://img.youtube.com/vi/bqLSEn0y_v4/maxresdefault.jpg)](https://youtu.be/bqLSEn0y_v4)
+---
